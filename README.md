@@ -35,6 +35,10 @@ Set the window title to a new value, and push the old value in a stack to be rec
 For the current user take ACL ownership of a registry sub key.
 #### Set-ForegroundWindow
 Bring any process window into the foreground.
+#### Set-ServiceStartMode
+Sets a named Service to either disabled or automatic.
+#### Set-ServiceStart
+Start or stop a named Service.
 #### Set-TokenPrivilege
 Sets a token privilege required for management tasks.  A user account may or may not have the token privilege by default.
 #### Set-Window
