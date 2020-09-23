@@ -1,0 +1,86 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>6CAFC0C6-A428-4d30-A9F9-700E829FEA51</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyApplication</RootNamespace>
+    <AssemblyName>MyApplication</AssemblyName>
+    <Name>Powershell.Library</Name>
+    <ManifestPath>$(OutDir)\$(ProjectName).psd1</ManifestPath>
+    <Author>George Leithead</Author>
+    <CompanyName>InternetWideWorld.com</CompanyName>
+    <Copyright>(c) 2020 George Leithead (InternetWideWorld.com). All rights reserved.</Copyright>
+    <Description>A PowerShell module library that is deployed to provide a single, comprehensive library to support and enhance your other PowerShell libraries.</Description>
+    <Guid>496e7465-726e-6574-5769-6465576f726c</Guid>
+    <PowerShellVersion>4.0</PowerShellVersion>
+    <ProcessorArchitecture />
+    <PackageEntryPoint>Powershell.Library.global.ps1</PackageEntryPoint>
+    <DotNetVersion>v4.6.1</DotNetVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <ProductVersion>1.0.0.0</ProductVersion>
+    <PackageType>Console</PackageType>
+    <FileDescription>A PowerShell module library that is deployed to provide a single, comprehensive library to support and enhance your other PowerShell libraries.</FileDescription>
+    <ProductName>PowerShell.Library</ProductName>
+    <PackageModules>False</PackageModules>
+    <PackageAsExecutable>True</PackageAsExecutable>
+    <Bundle>False</Bundle>
+    <Obfuscate>False</Obfuscate>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Functions\" />
+    <Folder Include="Functions\Core\" />
+    <Folder Include="Functions\Sccm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Functions\Core\Add-HostName.psm1" />
+    <Compile Include="Functions\Core\ConvertFrom-EncryptedString.psm1" />
+    <Compile Include="Functions\Core\ConvertTo-EncryptedString.psm1" />
+    <Compile Include="Functions\Core\Get-AccessMaskFromPermission.psm1" />
+    <Compile Include="Functions\Core\Get-CallerPreference.psm1" />
+    <Compile Include="Functions\Core\Get-DeviceRam.psm1" />
+    <Compile Include="Functions\Core\Invoke-BalloonTip.psm1" />
+    <Compile Include="Functions\Core\Invoke-LogInAsAnotherUser.psm1" />
+    <Compile Include="Functions\Core\Pop-LogFile.psm1" />
+    <Compile Include="Functions\Core\Pop-WindowTitle.psm1" />
+    <Compile Include="Functions\Core\Push-LogFile.psm1" />
+    <Compile Include="Functions\Core\Push-WindowTitle.psm1" />
+    <Compile Include="Functions\Core\Request-Ownership.psm1" />
+    <Compile Include="Functions\Core\Set-ForegroundWindow.psm1" />
+    <Compile Include="Functions\Core\Set-TokenPrivilege.psm1" />
+    <Compile Include="Functions\Core\Set-Window.psm1" />
+    <Compile Include="Functions\Core\Set-WMINamespaceSecurity.psm1" />
+    <Compile Include="Functions\Core\Test-IPAddress.psm1" />
+    <Compile Include="Functions\Core\Test-MACAddress.psm1" />
+    <Compile Include="Functions\Core\Watch-Process.psm1" />
+    <Compile Include="Functions\Sccm\Add-SCCMDeviceToCollection.psm1" />
+    <Compile Include="Functions\Sccm\Get-SCCMCollection.psm1" />
+    <Compile Include="Functions\Sccm\Get-SCCMDevice.psm1" />
+    <Compile Include="Functions\Sccm\Get-SCCMDeviceCollections.psm1" />
+    <Compile Include="Functions\Sccm\Get-SCCMSiteCode.psm1" />
+    <Compile Include="Functions\Sccm\Install-SCCMProgramUpdate.psm1" />
+    <Compile Include="Functions\Sccm\Remove-SCCMDeviceFromCollection.psm1" />
+    <Compile Include="Functions\Sccm\Update-SCCMDiscoveryInventory.psm1" />
+    <Compile Include="Functions\Sccm\Update-SCCMPolicyRetrieval.psm1" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="Build" />
+  <Import Project="$(MSBuildExtensionsPath)\PowerShell Tools for Visual Studio\PowerShellTools.targets" Condition="Exists('$(MSBuildExtensionsPath)\PowerShell Tools for Visual Studio\PowerShellTools.targets')" />
+</Project>
