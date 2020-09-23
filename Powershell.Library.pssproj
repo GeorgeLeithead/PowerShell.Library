@@ -64,6 +64,7 @@
     <Compile Include="Functions\Core\Push-WindowTitle.psm1" />
     <Compile Include="Functions\Core\Request-Ownership.psm1" />
     <Compile Include="Functions\Core\Set-ForegroundWindow.psm1" />
+    <Compile Include="Functions\Core\Set-ServiceStartMode.psm1" />
     <Compile Include="Functions\Core\Set-TokenPrivilege.psm1" />
     <Compile Include="Functions\Core\Set-Window.psm1" />
     <Compile Include="Functions\Core\Set-WMINamespaceSecurity.psm1" />
