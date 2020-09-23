@@ -68,7 +68,7 @@ Function Add-SCCMDeviceToCollection {
 		[HashTable]$DeviceParams = @{
 			SmsProvider = $SmsProvider
 			primarySCCM = $PrimarySCCM
-			Checkout    = $Device
+			Device    = $Device
 		} # HashTable for Get-SCCDevice
 	}
 
